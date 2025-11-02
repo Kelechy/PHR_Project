@@ -189,8 +189,8 @@ Example Roles and Permissions:
 
 | Role        | Permissions                                                       |
 | ----------- | ----------------------------------------------------------------- |
-| **Viewer** | `viewPatientRecords`, `updateOwnRecord`                           |
-| **Creator**  | `createPatientRecords`, `viewAllRecords`, `approveAccessRequests` |
+| **Viewer**  | `viewPatientRecords`, `updateOwnRecord`                           |
+| **Creator** | `createPatientRecords`, `viewAllRecords`, `approveAccessRequests` |
 | **Admin**   | `manageRoles`, `manageUsers`, `viewAllRecords`                    |
 
 
