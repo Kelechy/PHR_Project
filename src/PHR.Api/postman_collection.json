@@ -1,0 +1,160 @@
+{
+  "info": {
+    "name": "PHR API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/register",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "api", "auth", "register" ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"newuser@example.com\",\"password\":\"Password123!\"}"
+        }
+      }
+    },
+    {
+      "name": "Login (admin)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/login",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "api", "auth", "login" ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"admin@example.com\",\"password\":\"Password123!\"}"
+        }
+      }
+    },
+    {
+      "name": "Get Patients",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtToken}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/patients",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "api", "patients" ]
+        }
+      }
+    },
+    {
+      "name": "Create Patient",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/patients",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "api", "patients" ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"patientName\":\"Jane Doe\",\"dateOfBirth\":\"1990-01-01T00:00:00Z\",\"diagnosis\":\"Flu\",\"treatmentPlan\":\"Rest\"}"
+        }
+      }
+    },
+    {
+      "name": "Request Access",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/accessrequests/{{patientId}}",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "api", "accessrequests", "{{patientId}}" ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"reason\":\"Research\"}"
+        }
+      }
+    },
+    {
+      "name": "Approve Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwtToken}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/accessrequests/{{requestId}}/approve",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "api", "accessrequests", "{{requestId}}", "approve" ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"start\":\"2025-11-01T00:00:00Z\",\"end\":\"2025-11-02T00:00:00Z\"}"
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://localhost:5001"
+    },
+    {
+      "key": "jwtToken",
+      "value": ""
+    },
+    {
+      "key": "patientId",
+      "value": ""
+    },
+    {
+      "key": "requestId",
+      "value": ""
+    }
+  ]
+}

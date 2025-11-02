@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: phr_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+      dockerfile: src/PHR.Api/Dockerfile
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=phr_db;Username=postgres;Password=postgres
+      - Jwt__Key=ChangeThisSecretKey1234!
+      - Jwt__ExpiryMinutes=60
+    ports:
+      - "5000:80"
+    depends_on:
+      - db
+
+volumes:
+  pgdata:

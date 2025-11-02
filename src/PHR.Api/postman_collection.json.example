@@ -1,0 +1,9 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=localhost;Port=5432;Database=phr_db;Username=postgres;Password=postgres"
+  },
+  "Jwt": {
+    "Key": "ChangeThisSecretKey1234!",
+    "ExpiryMinutes": 60
+  }
+}
