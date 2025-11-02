@@ -2,8 +2,7 @@
   "info": {
     "name": "PHR API Collection",
     "_postman_id": "5b7d9a10-efa1-4a41-9c1f-9c6f913a83d5",
-    "description": "Sample API Requests for PHR Project (Auth, Patients, Roles, AccessRequests)",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "description": "Sample API Requests for PHR Project (Auth, Patients, Roles, AccessRequests)"
   },
   "item": [
     {

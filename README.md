@@ -16,7 +16,6 @@ Key Features
 - Role and access request management.
 - Unit and integration testing using xUnit.
 - Interactive API documentation with Swagger.
-- Container-ready for Docker deployments.
 
 ## System Architecture
 -------------------
@@ -196,7 +195,7 @@ Example Roles and Permissions:
 
 
 Note:
-For Database, either of PostgreSQL can be used, the system is designed to enable switching between the two:
+For Database, either of PostgreSQL or MSSQL can be used, the system is designed to enable switching between the two:
 -To use SQL Server:
    "DatabaseProvider": "MSSQL"
 
