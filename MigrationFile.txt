@@ -1,7 +1,0 @@
-git init
-git add .
-git commit -m "Initial PHR scaffold with docker, tests, postman"
-# create repo on GitHub then:
-git remote add origin https://github.com/<your-username>/PHR_Project.git
-git branch -M main
-git push -u origin main
